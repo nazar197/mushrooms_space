@@ -1,5 +1,4 @@
-<?php 
-    require_once 'parts/header.php';
+<?php require_once 'parts/header.php';
 
     if (isset($_GET['product'])) {
         $current_product = $_GET['product'];
@@ -18,6 +17,8 @@
 
     <h2><?php echo $product['ukr_name']; ?> (<?php echo $product['price']; ?> грн)</h2>
     <div class="description"><?php echo $product['description']; ?></div>
-    <img width="300" src="img/<?php echo $product['image']; ?>" alt="<?php echo $product['ukr_name']; ?>">
+    <img width="300" 
+        src="img/<?php echo $product['image']; ?>" 
+        alt="<?php echo $product['ukr_name']; ?>">
     <button type="submit">Додати в корзину</button>
 </div>

@@ -1,5 +1,4 @@
-<?php 
-    require_once 'parts/header.php';
+<?php require_once 'parts/header.php';
 
     if (isset($_GET['category'])) {
         $current_category = $_GET['category'];
@@ -23,10 +22,16 @@
     <?php foreach ($products as $product) { ?>
     <div class="card">
         <a href="product.php?product=<?php echo $product['title']; ?>">
-            <img src="img/<?php echo $product['image']; ?>" alt="<?php echo $product['ukr_name']; ?>">
+            <img src="img/<?php echo $product['image']; ?>" 
+                alt="<?php echo $product['ukr_name']; ?>">
         </a>
-        <div class="label"><?php echo $product['ukr_name']; ?> (<?php echo $product['price']; ?> грн)</div>
-        <button type="submit">Додати в корзину</button>
+        <div class="label">
+            <?php echo $product['ukr_name']; ?> (<?php echo $product['price']; ?> грн)
+        </div>
+        <form method="post" action="actions/add.php">
+            <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
+            <button type="submit">Додати в корзину</button>
+        </form>
     </div>
     <?php } ?>
 

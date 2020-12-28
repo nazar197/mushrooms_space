@@ -1,4 +1,6 @@
 <?php
+
+	session_start();
 	require_once 'db/db.php';
 	
 	$categories = $connect->query("
@@ -23,11 +25,18 @@
 
 <nav>
 	<ul>
-		<li><a href="index.php">Головна</a></li>
+		<li><a href="index.php">
+			Головна
+		</a></li>
 		<?php foreach ($categories as $category) { ?>
-		<li><a href="index.php?category=<?php echo $category['name']; ?>"><?php echo $category['ukr_name']; ?></a></li>
+		<li><a href="index.php?category=<?php echo $category['name']; ?>">
+			<?php echo $category['ukr_name']; ?>
+		</a></li>
 		<?php } ?>
-		<li><a href="cart.php">Кошик(Товарів: 15 на суму 9955грн)</a></li>
+		<li><a href="cart.php">
+			Кошик(Товарів: <?php echo $_SESSION['total_quantity'] ? $_SESSION['total_quantity'] : 0; ?> 
+			на суму <?php echo $_SESSION['total_price'] ? $_SESSION['total_price'] : 0; ?>грн)
+		</a></li>
 	</ul>
 </nav>
 <hr>
