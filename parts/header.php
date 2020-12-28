@@ -22,8 +22,8 @@
 <nav>
 	<ul>
 		<li><a href="index.php">Головна</a></li>
-		<?php foreach ($categories as $categorie) { ?>
-		<li><a href="index.php?categorie=<?php echo $categorie['name']; ?>"><?php echo $categorie['ukr_name']; ?></a></li>
+		<?php foreach ($categories as $category) { ?>
+		<li><a href="index.php?category=<?php echo $category['name']; ?>"><?php echo $category['ukr_name']; ?></a></li>
 		<?php } ?>
 		<li><a href="cart.php">Кошик(Товарів: 15 на суму 9955грн)</a></li>
 	</ul>

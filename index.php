@@ -1,8 +1,15 @@
 <?php 
     require_once 'parts/header.php';
 
-    $products = $connect->query("SELECT * FROM products");
-    $products = $products->fetchAll(PDO::FETCH_ASSOC);
+    if (isset($_GET['category'])) {
+        $current_category = $_GET['category'];
+        $products = $connect->query("SELECT * FROM products WHERE category = '$current_category'");
+        $products = $products->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $products = $connect->query("SELECT * FROM products");
+        $products = $products->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 ?>
 
 <div class="main">
