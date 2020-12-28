@@ -20,5 +20,5 @@
     <img width="300" 
         src="img/<?php echo $product['image']; ?>" 
         alt="<?php echo $product['ukr_name']; ?>">
-    <button type="submit">Додати в корзину</button>
+    <?php require_once 'parts/add-form.php'; ?>
 </div>

@@ -34,4 +34,4 @@ if (isset($_POST['id'])) {
 		$_SESSION['total_price'] += $product['price'] : $product['price']; 
 }
 
-header("Location: ../index.php");
+header("Location: {$_SERVER['HTTP_REFERER']}");

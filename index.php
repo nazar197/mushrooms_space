@@ -28,10 +28,7 @@
         <div class="label">
             <?php echo $product['ukr_name']; ?> (<?php echo $product['price']; ?> грн)
         </div>
-        <form method="post" action="actions/add.php">
-            <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
-            <button type="submit">Додати в корзину</button>
-        </form>
+        <?php require 'parts/add-form.php'; ?>
     </div>
     <?php } ?>
 
