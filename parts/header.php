@@ -3,10 +3,6 @@
 	
 	$categories = $connect->query("SELECT * FROM categories");
 	$categories = $categories->fetchAll(PDO::FETCH_ASSOC);
-
-	echo "<pre>";
-	var_dump($categories);
-	echo "</pre>";
 ?>
 
 <!doctype html>  

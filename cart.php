@@ -17,9 +17,7 @@
     </div>
     <button type="submit">Видалити</button>
 </div>
-
 <hr>
 
 </body>
-
 </html>
