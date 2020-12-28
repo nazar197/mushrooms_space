@@ -8,7 +8,7 @@
             WHERE title = '$current_product'
             ")->fetch(PDO::FETCH_ASSOC);
         
-            if (!$product) die("Товар не знайдено!");
+        if (!$product) die("Товар не знайдено!");
     } 
 ?>
 
