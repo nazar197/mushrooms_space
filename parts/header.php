@@ -1,8 +1,10 @@
 <?php
 	require_once 'db/db.php';
 	
-	$categories = $connect->query("SELECT * FROM categories");
-	$categories = $categories->fetchAll(PDO::FETCH_ASSOC);
+	$categories = $connect->query("
+		SELECT * 
+		FROM categories
+		")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!doctype html>  
