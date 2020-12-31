@@ -1,6 +1,12 @@
 <?php require_once 'parts/header.php';
 
-if (count($_SESSION['cart']) == 0) { ?>
+if (count($_SESSION['order'])) { 
+?>
+    <h2 class="cart-title">Ваше замовлення під номером <?php echo $_SESSION['order'] ?> прийняте!</h2>
+    <a href="index.php" class="back">Вернутись на головну</a>
+<?php 
+} else if (count($_SESSION['cart']) == 0) { 
+?>
     <h2 class="cart-title">Ваша корзина пуста :(</h2>
     <a href="index.php" class="back">Вернутись на головну</a>
 <?php 
@@ -22,12 +28,21 @@ if (count($_SESSION['cart']) == 0) { ?>
             <button type="submit">Видалити</button>
         </form>
     </div>
+    <hr>
+    
 <?php 
     } 
+?>
+<form action="actions/mail.php" method="post" class="order">
+        <input type="text" name="username" placeholder="Ваше ім'я" required>
+        <input type="text" name="phone" placeholder="Ваш телефон" required>
+        <input type="email" name="email" placeholder="Ваш емейл" required>
+        <input type="submit" name="order" value="Зробити замовлення">
+    </form>
+<?php 
 } 
 ?>
 
-<hr>
 
 </body>
 </html>
