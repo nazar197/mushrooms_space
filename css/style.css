@@ -12,10 +12,6 @@ a {
     text-decoration: none;
     text-transform: uppercase;
     color: #000000;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
 }
 
@@ -27,16 +23,10 @@ input, button {
     margin: 5px auto;
     border: none;
     padding: 10px;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
     transition: all .3s;
 }
 
 input[type=submit], button {
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
     border-radius: 10px;
     border: 1px solid black;
     display: block;
@@ -65,7 +55,7 @@ img {
 }
 
 .main, nav {
-    width: 1170px;
+    max-width: 1170px;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -74,15 +64,22 @@ img {
 
 nav ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
     width: 100%;
     justify-content: space-around;
     font-weight: 700;
 }
 
+nav li {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
 .card {
     margin-bottom: 15px;
     width: 30%;
+    min-width: 220px;
     padding: 10px;
     border: 2px solid black;
     text-align: center;
@@ -91,7 +88,7 @@ nav ul {
 
 .cart, .product-card {
     text-align: center;
-    width: 900px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -99,18 +96,18 @@ nav ul {
     text-align: center;
 }
 
-.descr {
+.description {
     margin-bottom: 20px;
 }
 
 .product-card img {
-    width: 500px;
+    max-width: 500px;
 }
 
 .cart {
     margin-bottom: 10px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -133,4 +130,21 @@ nav ul {
     display: block;
     margin: 10px auto;
     text-align: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 578px)  {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        text-align: center;
+        max-width: 220px;
+    }
+    
+    .cart {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
 }

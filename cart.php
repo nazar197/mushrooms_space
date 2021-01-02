@@ -5,6 +5,7 @@ if (count($_SESSION['order'])) {
     <h2 class="cart-title">Ваше замовлення під номером <?php echo $_SESSION['order'] ?> прийняте!</h2>
     <a href="index.php" class="back">Вернутись на головну</a>
 <?php 
+    unset($_SESSION['order']);
 } else if (count($_SESSION['cart']) == 0) { 
 ?>
     <h2 class="cart-title">Ваша корзина пуста :(</h2>
