@@ -28,13 +28,12 @@ if (count($_SESSION['order'])) {
             <input type="hidden" name="delete" value="<?php echo $key; ?>">
             <button type="submit">Видалити</button>
         </form>
-    </div>
-    <hr>
-    
+    </div>    
 <?php 
     } 
 ?>
-<form action="actions/mail.php" method="post" class="order">
+    <hr>
+    <form action="actions/mail.php" method="post" class="order">
         <input type="text" name="username" placeholder="Ваше ім'я" required>
         <input type="text" name="phone" placeholder="Ваш телефон" required>
         <input type="email" name="email" placeholder="Ваш емейл" required>

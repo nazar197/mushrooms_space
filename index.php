@@ -4,10 +4,12 @@
         $current_category = $_GET['category'];
         $products = $connect->query("
             SELECT * 
-            FROM products 
-            WHERE category = '$current_category'
+            FROM categories 
+            JOIN products 
+			ON products.category_id = categories.id 
+			WHERE name = '$current_category' 
             ")->fetchAll(PDO::FETCH_ASSOC);
-        
+
         if (!$products) die("Категорія не знайдена!");
     } else {
         $products = $connect->query("
